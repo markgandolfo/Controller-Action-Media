@@ -1,0 +1,27 @@
+ActionMedia
+===========
+
+Simple said, this creates a nice way to easily include javascript and stylesheets. 
+We all know that javascript and css should be broken up per page, and i've been using this
+for a while to easily load css/js which is page specific. 
+
+The plugin will look to make sure the file exists before trying to load it, so you won't have 404's when
+the file doesn't exist. 
+
+In short, for a given action belonging to a controller it will try load the associated css and js files. 
+
+Example
+=======
+
+In your layout file (or whever you have your head tags) add
+<%= controller_action_stylesheet %> 
+<%= controller_action_javascripts %>
+
+For :controller => "posts", :action => "index" it would generate (only if the files exist)
+<%= stylesheet_link_tag '/posts/index.css' %>
+<%= javascript_include_tag '/posts/index.js' %>
+
+Simple enough? 
+
+
+Copyright (c) 2009 Mark Gandolfo, released under the MIT license
